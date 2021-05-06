@@ -1,38 +1,226 @@
-.App {
-  text-align: center;
+*,*::before,*::after{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root{
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+}
+body {
+  margin: 0;
+  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.masthead{
+  width: 100vw;
+  height: 100vh;
+  background-color: gray;
+  background-image: url(https://startbootstrap.github.io/startbootstrap-agency/assets/img/header-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100%;
+  height:95px;
+}
+.navContainer{
+  display: flex;
+  flex-basis: auto;
+  width: 98%;
+  height:46px;
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+}
+.navbar-toggler{
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  height: 2rem;
+  width: 4em;
+  border-radius: 0.25rem;
+  padding-top: 0.5ch;
+  text-align: center;
+  vertical-align: center;
+  background-color: rgb(254,209,54);
+  text-transform: uppercase;
+  font-size: 15.2px;
+  position: absolute;
+  float: right;
+  margin-right: 2em;
+}
+.navbar-toggler {
+border: none;
+padding: 8px;
+box-shadow: 0px 1px 2px 1px gray;
+}
+
+.navbar-toggler a{
+  text-decoration: none;
+  color: white;
+  border: none;
+}
+.navbar-toggler-menu {
+  position:absolute;
+  display: flex;
+  background-color: #212529;
+  display: block;
+  list-style-type: none;
+  width:fit-content;
+  width: 100%;
+  animation: 0.2s linear menuSlideIn ;
+}
+.navbar-toggler-menu a{
+  text-decoration: none;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.navbar-toggler-menu li{
+  margin-left: 4rem;
+  height: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.navigation-toggler-menu a{
+  text-decoration: none;
+}
+.navbar-responsive-collapse{
+  display: flex;
+  height: 39px;
+  width: 72%;
+  align-items:center;
+  justify-content: flex-end;
+}
+.navbar-nav{
+  display: flex;
+  list-style-type: none;
+  margin-right: 22%;
+
+}
+.text-uppercase li a{
+  letter-spacing: 0.0625em;
+  padding: 8px;
+  margin-right: 1rem;
+  list-style-type: none;
+  text-decoration: none;
+  color: white;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 15.2px;
+  display: flex;
+}
+.nav-bar-brand-scroll-trigger{
+  display: inline-block;
+  align-content:center;
+  height: 39px;
+  width: 12em;
+  padding-top: 8px;
+}
+.welcome-container{
+  width: 63%;
+  height: 273px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  margin-left: auto;
+  margin-right:auto;
+  display: block;
+  margin-top: 120px;
+  box-sizing: border-box;
+  color: white;
+}
+.masthead-sub-heading{
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.masthead-heading{
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  line-height: 72px;
+  font-size: 4em;
+  margin-bottom: 64px;
+  text-transform: uppercase;
+  text-align:center;
+}
+.btn-primary{
+width: 225px;
+height:70px;
+font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+font-size: 18px;
+font-weight: 700;
+cursor: pointer;
+border-top-left-radius: 4px;
+border-radius: 0.25rem;
+background-color: rgb(254,209,54);
+text-align: center;
+line-height: 27px;
+text-transform: uppercase;
+padding: 20px;
+margin:auto
+}
+@media(max-width: 992px){
+  .text-uppercase li a{
+    display: flex;
+    flex-direction: column;
+    color: white;
   }
-  to {
-    transform: rotate(360deg);
+    @media(max-width: 992px){    
+    .masthead-heading{
+      font-weight: 700;
+      line-height: 60px;
+      font-size: 3em;
+    }
   }
+  @media(max-width: 992px){
+    .navbar{
+      background-color: #212529;
+      flex-direction: column;
+      color: white;
+    }
+}
+@media(max-width: 992px){
+.navbar-responsive-collapse{
+visibility: collapse;
+}
+}
+@media(max-width: 992px){
+  .nav-bar-brand-scroll-trigger{
+  margin-left: 4%;
+  }
+}
+@media(min-width: 500px){
+  .nav-bar-brand-scroll-trigger{
+    align-content:center;
+    height: 40px;
+    padding-top: 8px;
+
+  }
+}
+
+@media(max-width: 992px){
+  .navbar-toggler{
+  visibility: visible;
+}
+}
+@keyframes menuSlideIn {
+from{height: 0%}
+to{height: 30%}
+}
 }
